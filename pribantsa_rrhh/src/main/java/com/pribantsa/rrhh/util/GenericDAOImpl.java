@@ -5,16 +5,16 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository("GenericDAO")
 public class GenericDAOImpl<T, ID extends Serializable> implements GenericDAO<T, ID>{
 	
+	@Autowired
 	private SessionFactory sf;
 	private Class<T> persistentClass;
 	
-
-	protected GenericDAOImpl(SessionFactory sf){
-		this.sf = sf;
-	}
 	
 	public Class<T> getPersistentClass() {  
         return persistentClass;  
