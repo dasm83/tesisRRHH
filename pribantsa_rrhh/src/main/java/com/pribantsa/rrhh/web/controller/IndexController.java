@@ -1,5 +1,7 @@
 package com.pribantsa.rrhh.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,7 +12,8 @@ public class IndexController {
 	private static final String URL = "/index.htm";
 
 	@RequestMapping(method = RequestMethod.GET, value = URL)
-	public String get(){
+	public String get(HttpServletRequest request){
+		request.setAttribute("title", "Home");
 		return "index";
 	}
 	

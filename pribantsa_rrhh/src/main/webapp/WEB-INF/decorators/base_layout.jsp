@@ -23,7 +23,7 @@
 </head>
 <body>
  <div id="wrapper">
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom:0">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -140,17 +140,20 @@
             </div>
       
     </nav>
-    	
-    	<div id="page-wrapper">
+    
+    <div id="page-wrapper">
+    	<div class="row">
+    		<div class="col-lg-12">
+    			<h1 class="page-header"><c:out value="${title}"></c:out></h1>
+    		</div>
     	</div>
-    
-    
-  </div>
-  
-  
-   
-<sitemesh:write property='body'/>
-
+    	<div class="row">
+    		<div class="col-lg-12">
+    			<sitemesh:write property='body'/>
+    		</div>
+    	</div>
+    </div>
+</div>
 
 
 <script src="<c:url value="/resources/js/jquery-3.1.0.min.js" />"></script>
