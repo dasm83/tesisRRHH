@@ -11,7 +11,9 @@
 <title>PRIBANTSA-RRHH | <sitemesh:write property='title'/></title>
 
 <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet">
+<link href="<c:url value='/resources/css/metisMenu.min.css' />" rel="stylesheet">
 <link href="<c:url value='/resources/css/sb-admin-2.css' />" rel="stylesheet">
+<link href="<c:url value='/resources/css/font-awesome.min.css' />" rel="stylesheet">
 
 <sitemesh:write property='head'/>
 
@@ -156,8 +158,9 @@
 </div>
 
 
-<script src="<c:url value="/resources/js/jquery-3.1.0.min.js" />"></script>
+<script src="<c:url value="/resources/js/jquery-2.2.3.min.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="/resources/js/metisMenu.min.js" />"></script>
 <script src="<c:url value="/resources/js/sb-admin-2.js" />"></script>
 </body>
 </html>
