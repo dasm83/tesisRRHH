@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.springframework.transaction.annotation.Transactional;
 
-public interface GenericService<T, ID extends Serializable> {
+public interface GenericService<T extends Serializable, ID extends Serializable> {
 	
 	@Transactional(readOnly=false)
 	T save(final T o);

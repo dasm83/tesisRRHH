@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +25,7 @@ public class DepMainController {
 	private static final String JSP = "/maintenance/deptos";
 	private static final String FORM = "deptosMainForm";
 	
+	@Autowired
 	private DepartamentoService deptoService;
 	
 	@RequestMapping(method = RequestMethod.GET, value = URL)

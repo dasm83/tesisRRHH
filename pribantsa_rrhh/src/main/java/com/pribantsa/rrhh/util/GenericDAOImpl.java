@@ -2,6 +2,7 @@ package com.pribantsa.rrhh.util;
 
 import java.io.Serializable;
 import java.util.List;
+import java.lang.reflect.ParameterizedType;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -9,16 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository("GenericDAO")
-public class GenericDAOImpl<T, ID extends Serializable> implements GenericDAO<T, ID>{
+public class GenericDAOImpl<T extends Serializable, ID extends Serializable> implements GenericDAO<T, ID>{
 	
 	@Autowired
 	private SessionFactory sf;
-	private Class<T> persistentClass;
+	protected final Class<T> persistentClass;
 	
 	
-	public Class<T> getPersistentClass() {  
-        return persistentClass;  
-    }
+	@SuppressWarnings("unchecked")
+	public GenericDAOImpl(){
+		this.persistentClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+	}
+
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -34,7 +37,7 @@ public class GenericDAOImpl<T, ID extends Serializable> implements GenericDAO<T,
 	@SuppressWarnings("unchecked")
 	@Override
 	public T findById(ID id) {
-		return (T) sf.getCurrentSession().get(getPersistentClass(), id);
+		return (T) sf.getCurrentSession().get(persistentClass, id);
 	}
 
 	@Override
@@ -49,7 +52,7 @@ public class GenericDAOImpl<T, ID extends Serializable> implements GenericDAO<T,
 	}
 	
 	public Criteria getCriteria(){
-		return sf.getCurrentSession().createCriteria(getPersistentClass());
+		return sf.getCurrentSession().createCriteria(persistentClass);
 	}
 
 }

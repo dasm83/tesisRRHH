@@ -19,6 +19,10 @@ import javax.persistence.TemporalType;
 @Table(name = "permiso", schema = "pribantsa")
 public class Permiso implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5207055109600211759L;
 	private int idPermiso;
 	private Empleado empleado;
 	private TipoPermiso tipoPermiso;

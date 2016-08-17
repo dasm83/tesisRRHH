@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class GenericServiceImpl<T, ID extends Serializable> implements GenericService<T, ID> {
+public class GenericServiceImpl<T extends Serializable, ID extends Serializable> implements GenericService<T, ID> {
 	
 	@Autowired
 	GenericDAO<T, ID> dao;
