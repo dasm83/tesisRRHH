@@ -29,7 +29,7 @@ public class DepMainController {
 	@RequestMapping(method = RequestMethod.GET, value = URL)
 	public ModelAndView get(HttpServletRequest request) throws JsonGenerationException, JsonMappingException, IOException{
 	
-		List<Departamento> deptos = deptoService.findAll();
+		List<Departamento> deptos = deptoService.findAll(); /// aqui esta fallando
 		ObjectMapper mapper = new ObjectMapper();
 		
 		request.setAttribute("title", "Departamentos");
