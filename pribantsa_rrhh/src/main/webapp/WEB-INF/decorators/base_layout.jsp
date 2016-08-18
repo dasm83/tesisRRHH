@@ -22,6 +22,7 @@
 <![endif]-->
 </head>
 <body>
+  
  <div id="wrapper">
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom:0">
       <div class="container-fluid">
@@ -149,11 +150,13 @@
     	</div>
     	<div class="row">
     		<div class="col-lg-12">
+    			
     			<sitemesh:write property='body'/>
     		</div>
     	</div>
     </div>
-</div>
+</div> 
+
 
 
 <script src="<c:url value="/resources/js/jquery-3.1.0.min.js" />"></script>
