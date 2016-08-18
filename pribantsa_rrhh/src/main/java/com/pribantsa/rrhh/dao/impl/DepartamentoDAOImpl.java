@@ -10,5 +10,10 @@ import com.pribantsa.rrhh.util.GenericDAOImpl;
 public class DepartamentoDAOImpl extends GenericDAOImpl<Departamento, Long> implements DepartamentoDAO{
 
 	
+	public DepartamentoDAOImpl() {
+		super(Departamento.class);
+	}
+
+	
 
 }

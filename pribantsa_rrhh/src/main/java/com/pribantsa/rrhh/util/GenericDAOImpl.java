@@ -2,7 +2,6 @@ package com.pribantsa.rrhh.util;
 
 import java.io.Serializable;
 import java.util.List;
-import java.lang.reflect.ParameterizedType;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -14,12 +13,15 @@ public class GenericDAOImpl<T extends Serializable, ID extends Serializable> imp
 	
 	@Autowired
 	private SessionFactory sf;
-	protected final Class<T> persistentClass;
+	private Class<T> persistentClass;
 	
 	
-	@SuppressWarnings("unchecked")
 	public GenericDAOImpl(){
-		this.persistentClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+		
+	}
+	
+	public GenericDAOImpl(Class<T> persistentClass){
+		this.persistentClass = persistentClass;
 	}
 
 
